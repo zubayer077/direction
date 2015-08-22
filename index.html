@@ -1,0 +1,146 @@
+<html>
+<head>
+
+    <title>jQuery show</title>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    <script type="text/javascript">
+	
+		var dataFields = {info_id:6592288, event_id:108012,user_id:"54ca2be0ccd3de201b000001"};
+		
+		
+		
+		
+		var dataFields = {7829614: {event_id:"126957",user_id:"fngo_id"}, 7829762:{event_id:"126957",user_id:"fngo_id"},7829833:{event_id:"126957",user_id:"fngo_id"},7829904:{event_id:"126957",user_id:"fngo_id"},7829928:{event_id:"126957",user_id:"fngo_id"}}; 
+		
+		var dataFields = {info_id:1825590, viewed:"true", dismiss:"false", frmDate:"2015-03-15", toDate:"2015-04-15", event_id:29103, user_id:"fngo_id"};
+		
+		var dataFields = {rule_id:383,user_id:"5416f85b1f52a80d00000001",layer_id:"5526938ae62e6f0701000001"};
+		var dataFields = {user_id:"5416f85b1f52a80d00000001",layer_id:"5526938ae62e6f0701000001",user_name:"Hossan",gws_layer:"exactAIS:LVI",desc_filter:"blank",email:"cellemail@mail.net",alert_in:"false",alert_out:"false",alert_email:true,removed:true,is_active:false,ogc_filter:"<ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\"><ogc:And><ogc:PropertyIsLike matchCase=\"false\" wildCard=\"*\" singleChar=\".\" escapeChar=\"!\"><ogc:PropertyName>flag_country</ogc:PropertyName><ogc:Literal>*France*</ogc:Literal></ogc:PropertyIsLike><ogc:PropertyIsLike matchCase=\"false\" wildCard=\"*\" singleChar=\".\" escapeChar=\"!\"><ogc:PropertyName>vessel_type</ogc:PropertyName><ogc:Literal>*Sailing*</ogc:Literal></ogc:PropertyIsLike><ogc:PropertyIsEqualTo matchCase=\"false\"><ogc:PropertyName>sog</ogc:PropertyName><ogc:Literal>0</ogc:Literal></ogc:PropertyIsEqualTo></ogc:And></ogc:Filter>"};
+		
+		var dataFields = {rule_id:383,user_id:"5416f85b1f52a80d00000001",layer_id:"5526938ae62e6f0701000001",user_name:"exactAIS",gws_layer:"exactAIS:LVI",desc_filter:"blank",email:"cellemail@mail.net",alert_in:true,alert_out:false,alert_email:true,removed:true,is_active:false,ogc_filter:"<ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\"><ogc:And><ogc:PropertyIsLike matchCase=\"false\" wildCard=\"*\" singleChar=\".\" escapeChar=\"!\"><ogc:PropertyName>flag_country</ogc:PropertyName><ogc:Literal>*France*</ogc:Literal></ogc:PropertyIsLike><ogc:PropertyIsLike matchCase=\"false\" wildCard=\"*\" singleChar=\".\" escapeChar=\"!\"><ogc:PropertyName>vessel_type</ogc:PropertyName><ogc:Literal>*Sailing*</ogc:Literal></ogc:PropertyIsLike><ogc:PropertyIsEqualTo matchCase=\"false\"><ogc:PropertyName>sog</ogc:PropertyName><ogc:Literal>0</ogc:Literal></ogc:PropertyIsEqualTo></ogc:And></ogc:Filter>"};
+		
+		
+		var dataFields = {rule_id:383, user_id:"5416f85b1f52a80d00000001",layer_id:"5526938ae62e6f0701000001",user_name:"By Hossan",gws_layer:"exactAIS:LVI",desc_filter:"blank",email:"cellemail@mail.net",alert_in:"false",alert_out:"false",alert_email:true,removed:true,is_active:false,ogc_filter:"<ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\"><ogc:And><ogc:PropertyIsLike matchCase=\"false\" wildCard=\"*\" singleChar=\".\" escapeChar=\"!\"><ogc:PropertyName>flag_country</ogc:PropertyName><ogc:Literal>*France*</ogc:Literal></ogc:PropertyIsLike><ogc:PropertyIsLike matchCase=\"false\" wildCard=\"*\" singleChar=\".\" escapeChar=\"!\"><ogc:PropertyName>vessel_type</ogc:PropertyName><ogc:Literal>*Sailing*</ogc:Literal></ogc:PropertyIsLike><ogc:PropertyIsEqualTo matchCase=\"false\"><ogc:PropertyName>sog</ogc:PropertyName><ogc:Literal>0</ogc:Literal></ogc:PropertyIsEqualTo></ogc:And></ogc:Filter>"};
+		
+
+		
+		var dataFields = {"alerts":[{"info_id":6592288, "viewed":"true", "dismiss":"true", "event_id":108012,"user_id":"54ca2be0ccd3de201b000001"},{"info_id":6592289, "viewed":"true", "dismiss":"true", "event_id":108012,"user_id":"54ca2be0ccd3de201b000001"},{"info_id":6592290, "viewed":"true", "dismiss":"true", "event_id":108012,"user_id":"54ca2be0ccd3de201b000001"}]};
+		
+		var dataFields = {layer_id:"5543b62770cf6b141b000001", user_id:"5416f85b1f52a80d00000001"};
+		
+/*        function Show_Div(Div_id) {
+
+			$.ajax({
+				type:"POST",
+				url:"http://localhost:8080/alerts/rules/settings",
+				// url:"http://10.224.36.90:8080/rest/alerts/events/all",
+				data:dataFields,
+				// dataType:"json",
+				// contentType:"application/json; charset=utf-8",
+				success:function(data){
+					
+					 console.log(data);
+					
+					//var output = data.info_id+" : "+data.type+" : "+data.layer_id+" : "+data.viewed;
+					//var output = data[0].layer_id;
+					//data.forEach(function(elem, index, array){
+					//	output +="<br/>"+elem.info_id+" : "+elem.type+" : "+elem.layer_id+" : "+elem.viewed;
+						
+					//});
+					// $("#Div_1").text(output);
+				},
+				error:function( error ){
+
+                    // Log any error.
+                    console.log( "ERROR:", error );
+
+                },
+                complete:function(){
+					console.log("completed");
+				}
+			});
+        }*/
+        function Show_Div(Div_id) {
+
+			$.ajax({
+				type:"POST",
+				url:"http://localhost:8080/api/v1/authenticate",
+				// url:"http://localhost:8080/admin/privatePage",
+				data:{"X-Auth-Username":"admin", "X-Auth-Password":"admin"},
+				//headers:{"X-Auth-Token":"642edec1-87a4-4f3a-a6f6-185e3b1152a4"},
+				success:function(data){
+					$.ajax({
+						type:"POST",
+						url:"http://localhost:8080/admin/privatePage",
+						data:{"X-Auth-Token":data.token},
+						success:function(data){
+							console.log(data);
+							
+						},
+						error:function( error ){
+							// Log any error.
+							console.log( "ERROR:", error );
+
+						},
+						complete:function(){
+							console.log("completed");
+						}
+					});
+					
+				},
+				error:function( error ){
+                    // Log any error.
+                    console.log( "ERROR:", error );
+
+                },
+                complete:function(){
+					console.log("completed");
+				}
+			});
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <br />
+
+    <input type="button" value="Click me to show or hidden div" onclick="Show_Div(Div_1)" />
+
+    <br />
+
+    <br />
+
+    <div id="Div_1" style="background-color: #ffffdd; ">
+
+        I am div
+
+    <br />
+
+        Now you can see me.
+
+    </div>
+<script type="text/javascript">
+
+var Conf = {};
+	Conf.WHATSNEWHTML = "We've rolled out ShipView " + Conf.VERSION + " with new features and enhancements.";
+    Conf.WHATSNEWHTML += " From ShipView "+Conf.VERSION+" onwards, you will be able to see more detailed ship types instead of just generic types reported within AIS messages.";
+    Conf.WHATSNEWHTML += " You'll also see that we have made the ship track slider a separate widget which now offers the ability to pick a start and end date and time.";
+    Conf.WHATSNEWHTML += " Starting from "+Conf.VERSION+" you'll also be notified within the app when we're rolling out a new version so you don't miss out on any of the new features we're planning on introducing.";
+    Conf.WHATSNEWHTML += "<br /><br />";
+    Conf.WHATSNEWHTML += "In order to maximize the information you can see about a vessel, we've rearranged the Ship Information pane in order to make the most relevant information clearer.";
+    Conf.WHATSNEWHTML += " We've also added new filters to make your customized layer rules even more powerful than before.";
+    Conf.WHATSNEWHTML += "<br /><br />";
+    Conf.WHATSNEWHTML += "We've fixed minor bugs, made some performance improvements to improve loading speed & added the ability to have user specific widgets and toolbars.";
+    Conf.WHATSNEWHTML += " All the functionality from ShipView 1.2 remains, such as Alerts, the ability to manage user created polygons & the capability to display external OGC WMS within the viewer.";
+	
+$("#Div_1").html(Conf.WHATSNEWHTML);
+</script>
+</body>
+
+</html>
+ 
