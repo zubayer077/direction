@@ -22,8 +22,10 @@ function loopBranch(direction){
 					var transit_details = direction["transit_details"],
 						dt = new Date(direction["transit_details"].departure_time.value*1000);
 					dateString += " to "+direction["transit_details"].arrival_stop.name+" at "+(dt.getHours()<=12?dt.getHours():dt.getHours()-12)+":"+dt.getMinutes()+" on "+dt.getDate();
+				} else if (direction["distance"]){
+					dateString += " "+direction["distance"].text;
 				}
-				output +=" <br>"+direction[prop] +dateString;
+				output +=" <br>"+direction[prop]+dateString;
 			}
 		}
 	}
