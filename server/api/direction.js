@@ -25,7 +25,10 @@ function loopBranch(direction){
 				} else if (direction["distance"]){
 					dateString += " "+direction["distance"].text;
 				}
-				output +=" <br>"+direction[prop]+dateString;
+				var strippedText = direction[prop];
+				if (strippedText.indexOf("Walk to 147 Scott Road")>-1)
+					return;
+				output +=" <br>"+strippedText+dateString;
 			}
 		}
 	}

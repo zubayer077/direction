@@ -1,0 +1,230 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'htmlstrip-native' ]
+2 info using npm@1.4.23
+3 info using node@v0.10.31
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json premier_blog@0.0.1 No description
+6 warn package.json premier_blog@0.0.1 No repository field.
+7 warn package.json premier_blog@0.0.1 No README data
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ 'htmlstrip-native', null ]
+10 verbose cache add name=undefined spec="htmlstrip-native" args=["htmlstrip-native",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'htmlstrip-native',
+11 verbose parsed url   path: 'htmlstrip-native',
+11 verbose parsed url   href: 'htmlstrip-native' }
+12 silly lockFile bd86f599-htmlstrip-native htmlstrip-native
+13 verbose lock htmlstrip-native D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\bd86f599-htmlstrip-native.lock
+14 silly lockFile bd86f599-htmlstrip-native htmlstrip-native
+15 silly lockFile bd86f599-htmlstrip-native htmlstrip-native
+16 verbose addNamed [ 'htmlstrip-native', '' ]
+17 verbose addNamed [ null, '*' ]
+18 silly lockFile 096c7876-htmlstrip-native htmlstrip-native@
+19 verbose lock htmlstrip-native@ D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\096c7876-htmlstrip-native.lock
+20 silly addNameRange { name: 'htmlstrip-native', range: '*', hasData: false }
+21 verbose request where is /htmlstrip-native
+22 verbose request registry https://registry.npmjs.org/
+23 verbose request id 543ee7df777e19b8
+24 verbose url raw /htmlstrip-native
+25 verbose url resolving [ 'https://registry.npmjs.org/', './htmlstrip-native' ]
+26 verbose url resolved https://registry.npmjs.org/htmlstrip-native
+27 verbose request where is https://registry.npmjs.org/htmlstrip-native
+28 info trying registry request attempt 1 at 10:02:14
+29 http GET https://registry.npmjs.org/htmlstrip-native
+30 http 200 https://registry.npmjs.org/htmlstrip-native
+31 silly registry.get cb [ 200,
+31 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+31 silly registry.get     etag: '"31H0GBBM9WKI8F7BZ09XM9GXL"',
+31 silly registry.get     'content-type': 'application/json',
+31 silly registry.get     'cache-control': 'max-age=60',
+31 silly registry.get     'content-length': '9972',
+31 silly registry.get     'accept-ranges': 'bytes',
+31 silly registry.get     date: 'Tue, 25 Aug 2015 14:02:14 GMT',
+31 silly registry.get     via: '1.1 varnish',
+31 silly registry.get     age: '0',
+31 silly registry.get     connection: 'keep-alive',
+31 silly registry.get     'x-served-by': 'cache-ord1727-ORD',
+31 silly registry.get     'x-cache': 'MISS',
+31 silly registry.get     'x-cache-hits': '0',
+31 silly registry.get     'x-timer': 'S1440511334.542309,VS0,VE81',
+31 silly registry.get     vary: 'Accept' } ]
+32 silly addNameRange number 2 { name: 'htmlstrip-native', range: '*', hasData: true }
+33 silly addNameRange versions [ 'htmlstrip-native',
+33 silly addNameRange   [ '0.0.1',
+33 silly addNameRange     '0.0.2',
+33 silly addNameRange     '0.0.3',
+33 silly addNameRange     '0.0.4',
+33 silly addNameRange     '0.0.5',
+33 silly addNameRange     '0.0.6',
+33 silly addNameRange     '0.1.0',
+33 silly addNameRange     '0.1.1' ] ]
+34 verbose addNamed [ 'htmlstrip-native', '0.1.1' ]
+35 verbose addNamed [ '0.1.1', '0.1.1' ]
+36 silly lockFile 0f7d1f28-htmlstrip-native-0-1-1 htmlstrip-native@0.1.1
+37 verbose lock htmlstrip-native@0.1.1 D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\0f7d1f28-htmlstrip-native-0-1-1.lock
+38 silly lockFile 48a7ac5a-ative-htmlstrip-native-0-1-1-tgz https://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz
+39 verbose lock https://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\48a7ac5a-ative-htmlstrip-native-0-1-1-tgz.lock
+40 verbose addRemoteTarball [ 'https://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz',
+40 verbose addRemoteTarball   '459722601c8f0236dd3f80a03b7bf7f5eefe6351' ]
+41 info retry fetch attempt 1 at 10:02:14
+42 verbose fetch to= D:\Users\HOSSAN~1.ZUB\AppData\Local\Temp\npm-10784-hIkvXcwT\registry.npmjs.org\htmlstrip-native\-\htmlstrip-native-0.1.1.tgz
+43 http GET https://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz
+44 http 200 https://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz
+45 silly lockFile 48a7ac5a-ative-htmlstrip-native-0-1-1-tgz https://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz
+46 silly lockFile 48a7ac5a-ative-htmlstrip-native-0-1-1-tgz https://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz
+47 silly lockFile 0f7d1f28-htmlstrip-native-0-1-1 htmlstrip-native@0.1.1
+48 silly lockFile 0f7d1f28-htmlstrip-native-0-1-1 htmlstrip-native@0.1.1
+49 silly lockFile 096c7876-htmlstrip-native htmlstrip-native@
+50 silly lockFile 096c7876-htmlstrip-native htmlstrip-native@
+51 silly resolved [ { name: 'htmlstrip-native',
+51 silly resolved     version: '0.1.1',
+51 silly resolved     description: 'Strip html tags with ease and efficiency',
+51 silly resolved     author: { name: 'Svetlozar Argirov', email: 'zarrro@gmail.com' },
+51 silly resolved     keywords: [ 'html', 'strip', 'tag', 'entities' ],
+51 silly resolved     main: 'index.js',
+51 silly resolved     repository:
+51 silly resolved      { type: 'git',
+51 silly resolved        url: 'git://github.com/zaro/node-htmlstrip-native.git' },
+51 silly resolved     dependencies: {},
+51 silly resolved     scripts: { test: 'test/test.sh', install: 'node-gyp rebuild' },
+51 silly resolved     gypfile: true,
+51 silly resolved     gitHead: 'b73836b2db07ae6b9485a0feeb2aec8052336ac2',
+51 silly resolved     bugs: { url: 'https://github.com/zaro/node-htmlstrip-native/issues' },
+51 silly resolved     homepage: 'https://github.com/zaro/node-htmlstrip-native',
+51 silly resolved     _id: 'htmlstrip-native@0.1.1',
+51 silly resolved     _shasum: '459722601c8f0236dd3f80a03b7bf7f5eefe6351',
+51 silly resolved     _from: 'htmlstrip-native@',
+51 silly resolved     _npmVersion: '2.5.1',
+51 silly resolved     _nodeVersion: '0.12.0',
+51 silly resolved     _npmUser: { name: 'zaro', email: 'zarrro@gmail.com' },
+51 silly resolved     maintainers: [ [Object] ],
+51 silly resolved     dist:
+51 silly resolved      { shasum: '459722601c8f0236dd3f80a03b7bf7f5eefe6351',
+51 silly resolved        tarball: 'http://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz' },
+51 silly resolved     directories: {},
+51 silly resolved     _resolved: 'https://registry.npmjs.org/htmlstrip-native/-/htmlstrip-native-0.1.1.tgz' } ]
+52 info install htmlstrip-native@0.1.1 into C:\Hotkey Scripts\direction
+53 info installOne htmlstrip-native@0.1.1
+54 verbose node_modules\htmlstrip-native unbuild
+55 verbose tar unpack D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\htmlstrip-native\0.1.1\package.tgz
+56 silly lockFile 2ac49ead-on-node-modules-htmlstrip-native tar://C:\Hotkey Scripts\direction\node_modules\htmlstrip-native
+57 verbose lock tar://C:\Hotkey Scripts\direction\node_modules\htmlstrip-native D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\2ac49ead-on-node-modules-htmlstrip-native.lock
+58 silly lockFile 139e7f48-mlstrip-native-0-1-1-package-tgz tar://D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\htmlstrip-native\0.1.1\package.tgz
+59 verbose lock tar://D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\htmlstrip-native\0.1.1\package.tgz D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\139e7f48-mlstrip-native-0-1-1-package-tgz.lock
+60 silly gunzTarPerm modes [ '777', '666' ]
+61 silly gunzTarPerm extractEntry package.json
+62 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+63 silly gunzTarPerm extractEntry .npmignore
+64 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+65 silly gunzTarPerm extractEntry README.md
+66 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+67 silly gunzTarPerm extractEntry LICENSE
+68 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+69 silly gunzTarPerm extractEntry build_entities_hashtable.js
+70 silly gunzTarPerm modified mode [ 'build_entities_hashtable.js', 420, 438 ]
+71 silly gunzTarPerm extractEntry crash.js
+72 silly gunzTarPerm modified mode [ 'crash.js', 420, 438 ]
+73 silly gunzTarPerm extractEntry index.js
+74 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+75 silly gunzTarPerm extractEntry test/test.js
+76 silly gunzTarPerm modified mode [ 'test/test.js', 420, 438 ]
+77 silly gunzTarPerm extractEntry test/test_acc.js
+78 silly gunzTarPerm modified mode [ 'test/test_acc.js', 420, 438 ]
+79 silly gunzTarPerm extractEntry test/test_attr.js
+80 silly gunzTarPerm modified mode [ 'test/test_attr.js', 420, 438 ]
+81 silly gunzTarPerm extractEntry test/test_comments.js
+82 silly gunzTarPerm modified mode [ 'test/test_comments.js', 420, 438 ]
+83 silly gunzTarPerm extractEntry test/test_entities.js
+84 silly gunzTarPerm modified mode [ 'test/test_entities.js', 420, 438 ]
+85 silly gunzTarPerm extractEntry test/test_strip.js
+86 silly gunzTarPerm modified mode [ 'test/test_strip.js', 420, 438 ]
+87 silly gunzTarPerm extractEntry test/test_strip_compact_ws.js
+88 silly gunzTarPerm modified mode [ 'test/test_strip_compact_ws.js', 420, 438 ]
+89 silly gunzTarPerm extractEntry test/test_strip_random.js
+90 silly gunzTarPerm modified mode [ 'test/test_strip_random.js', 420, 438 ]
+91 silly gunzTarPerm extractEntry test/test_url.js
+92 silly gunzTarPerm modified mode [ 'test/test_url.js', 420, 438 ]
+93 silly gunzTarPerm extractEntry test/test.sh
+94 silly gunzTarPerm modified mode [ 'test/test.sh', 493, 511 ]
+95 silly gunzTarPerm extractEntry acc_translit.hpp
+96 silly gunzTarPerm modified mode [ 'acc_translit.hpp', 420, 438 ]
+97 silly gunzTarPerm extractEntry entities/README.md
+98 silly gunzTarPerm modified mode [ 'entities/README.md', 420, 438 ]
+99 silly gunzTarPerm extractEntry entities/html4.json
+100 silly gunzTarPerm modified mode [ 'entities/html4.json', 420, 438 ]
+101 silly gunzTarPerm extractEntry entities/html5.json
+102 silly gunzTarPerm modified mode [ 'entities/html5.json', 420, 438 ]
+103 silly gunzTarPerm extractEntry entities/xml.json
+104 silly gunzTarPerm modified mode [ 'entities/xml.json', 420, 438 ]
+105 silly gunzTarPerm extractEntry .travis.yml
+106 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+107 silly gunzTarPerm extractEntry examples/simple.js
+108 silly gunzTarPerm modified mode [ 'examples/simple.js', 420, 438 ]
+109 silly gunzTarPerm extractEntry htmlstrip.cpp
+110 silly gunzTarPerm modified mode [ 'htmlstrip.cpp', 420, 438 ]
+111 silly gunzTarPerm extractEntry htmlstrip.hpp
+112 silly gunzTarPerm modified mode [ 'htmlstrip.hpp', 420, 438 ]
+113 silly gunzTarPerm extractEntry htmlstrip_module.cpp
+114 silly gunzTarPerm modified mode [ 'htmlstrip_module.cpp', 420, 438 ]
+115 silly gunzTarPerm extractEntry htmlstrip_module_new.cpp
+116 silly gunzTarPerm modified mode [ 'htmlstrip_module_new.cpp', 420, 438 ]
+117 silly gunzTarPerm extractEntry htmlstrip_module_old.cpp
+118 silly gunzTarPerm modified mode [ 'htmlstrip_module_old.cpp', 420, 438 ]
+119 silly gunzTarPerm extractEntry binding.gyp
+120 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 438 ]
+121 silly gunzTarPerm extractEntry entities.hpp
+122 silly gunzTarPerm modified mode [ 'entities.hpp', 420, 438 ]
+123 silly lockFile 2ac49ead-on-node-modules-htmlstrip-native tar://C:\Hotkey Scripts\direction\node_modules\htmlstrip-native
+124 silly lockFile 2ac49ead-on-node-modules-htmlstrip-native tar://C:\Hotkey Scripts\direction\node_modules\htmlstrip-native
+125 silly lockFile 139e7f48-mlstrip-native-0-1-1-package-tgz tar://D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\htmlstrip-native\0.1.1\package.tgz
+126 silly lockFile 139e7f48-mlstrip-native-0-1-1-package-tgz tar://D:\Users\hossan.zubayer\AppData\Roaming\npm-cache\htmlstrip-native\0.1.1\package.tgz
+127 info preinstall htmlstrip-native@0.1.1
+128 verbose readDependencies using package.json deps
+129 verbose readDependencies using package.json deps
+130 silly resolved []
+131 verbose about to build C:\Hotkey Scripts\direction\node_modules\htmlstrip-native
+132 info build C:\Hotkey Scripts\direction\node_modules\htmlstrip-native
+133 verbose linkStuff [ false,
+133 verbose linkStuff   false,
+133 verbose linkStuff   false,
+133 verbose linkStuff   'C:\\Hotkey Scripts\\direction\\node_modules' ]
+134 info linkStuff htmlstrip-native@0.1.1
+135 verbose linkBins htmlstrip-native@0.1.1
+136 verbose linkMans htmlstrip-native@0.1.1
+137 verbose rebuildBundles htmlstrip-native@0.1.1
+138 info install htmlstrip-native@0.1.1
+139 verbose unsafe-perm in lifecycle true
+140 info htmlstrip-native@0.1.1 Failed to exec install script
+141 verbose node_modules\htmlstrip-native unbuild
+142 info preuninstall htmlstrip-native@0.1.1
+143 info uninstall htmlstrip-native@0.1.1
+144 verbose true,C:\Hotkey Scripts\direction\node_modules,C:\Hotkey Scripts\direction\node_modules unbuild htmlstrip-native@0.1.1
+145 info postuninstall htmlstrip-native@0.1.1
+146 error htmlstrip-native@0.1.1 install: `node-gyp rebuild`
+146 error Exit status 1
+147 error Failed at the htmlstrip-native@0.1.1 install script.
+147 error This is most likely a problem with the htmlstrip-native package,
+147 error not with npm itself.
+147 error Tell the author that this fails on your system:
+147 error     node-gyp rebuild
+147 error You can get their info via:
+147 error     npm owner ls htmlstrip-native
+147 error There is likely additional logging output above.
+148 error System Windows_NT 6.1.7601
+149 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "htmlstrip-native"
+150 error cwd C:\Hotkey Scripts\direction
+151 error node -v v0.10.31
+152 error npm -v 1.4.23
+153 error code ELIFECYCLE
+154 verbose exit [ 1, true ]
