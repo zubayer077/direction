@@ -1,16 +1,25 @@
 var express = require('express'),
 	path = require('path'),
 	lactate = require('lactate'),
+	direction = require(path.join(__dirname, "server", "api", "direction.js")),
 	
 	app = express(),
 	files = lactate.dir("public", {});
 	
 app.use(files.toMiddleware());
+app.get("/:q", function(req, res){
+	direction('https://maps.googleapis.com/maps/api/directions/json?origin='+req.params.q+'&destination=147+Scott+Rd,+Cambridge+ON,+Canada&mode=transit&key=AIzaSyDCMhZrfLlTvXGkaXgv3HWD5nTZAuJG7ig', res);
+	return;
+});
+app.get("/:q/:d", function(req, res){
+	direction('https://maps.googleapis.com/maps/api/directions/json?origin='+req.params.q+'&destination='+(req.params.d?req.params.d:'147+Scott+Rd,+Cambridge+ON,+Canada')+'&mode=transit&key=AIzaSyDCMhZrfLlTvXGkaXgv3HWD5nTZAuJG7ig', res);
+	return;
+});
 
-// app.get('/', function(req, res){
-	// files.serve("index.html", req, res);
-// });
-app.get('/*', require(path.join(__dirname, "server", "api", "direction.js")));
+app.get("/", function(req, res){
+	res.redirect(307, "http://zubayer.com");
+	return;
+});
 
 var server = app.listen(4010, function () {
 });

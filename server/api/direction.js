@@ -34,20 +34,12 @@ function loopBranch(direction){
 	}
 }
 
-var _self = function (req, res) {
-	output = "";
-	var url = "";
-	
-	if(req.query.q || req.query.d){
-		url += 'https://maps.googleapis.com/maps/api/directions/json?origin='+req.query.q+'&destination='+(req.query.d?req.query.d:'147+Scott+Rd,+Cambridge+ON,+Canada')+'&mode=transit&key=AIzaSyDCMhZrfLlTvXGkaXgv3HWD5nTZAuJG7ig';
-	} else if (req.params[0]) {
-			url += 'https://maps.googleapis.com/maps/api/directions/json?origin='+req.params[0]+'&destination=147+Scott+Rd,+Cambridge+ON,+Canada&mode=transit&key=AIzaSyDCMhZrfLlTvXGkaXgv3HWD5nTZAuJG7ig';
-	} else {
-		// files.serve("index.html", req, res);
-		res.redirect(307, "http://zubayer.com");
+var _self = function (url, res) {
+	if(!url){
+		res.end();
 		return;
 	}
-	
+	output = "";
 	request.get(url, function(error, response, body){
 		if (!error && response.statusCode == 200) {
 			var direction = {};
