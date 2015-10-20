@@ -2,30 +2,47 @@
 <html>
 <head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata:bold">
+<style>
+body {
+	font-family: 'Inconsolata', serif;
+	font-size: 16px;
+}
+form {
+	border: 80px solid transparent;
+}
+#sendemail{
+	width:500px; 
+	min-height:200px; 
+	border: 1px solid #aaa;
+	padding: 10px 10px 0 10px;
+	font-family: 'Inconsolata', serif;
+	font-size: 16px;
+}
+
+</style>
+
 </head>
 <body>
 
 <form action="sendemail" onsubmit="return false" method="post">
-	<div>
-		<textarea id="sendemail" name="content" style ="width:500px; height:100px"></textarea>
-	</div>
-	<span id="count"></span>
+	<textarea id="sendemail"></textarea>
+	<span id="count" style="display:block;"></span>
 </form>
 
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#sendemail").on("keyup", function(event){
-			var self = this;
-			if (event.which == 13)
-				$.post( "/sendemail", { content: $(self).val().trim()})
+			if (event.which == 13){
+				$.post( "/sendemail", { content: $("#sendemail").val().trim()})
 					.done(function() {
-						$(self).val('');
-						$("#count").html("");
+						$("#sendemail").val('');
+						$("#count").html('');
 					}).fail(function(err) {
 						alert(err.responseText);
 					});
-			else {
-				$("#count").html($(self).val().trim().length);
+			} else {
+				$("#count").html($("#sendemail").val().trim().length);
 			}
 		});
 	});
