@@ -16,7 +16,7 @@ var _self = function (content, res) {
 	}
 
 	var mailOptions = {
-		to: 'zubayer077@yahoo.com',
+		to: '2266060064@txt.windmobile.ca',
 		subject: content
 	};
 
