@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 
-<form action="sendemail" method="post">
-	<textarea name="content" style ="width:500px; height:100px"> </textarea>
-	<input type="text" name="username">
-	<br>
-	<input type="submit" value="Submit">
+<form action="sendemail" onsubmit="return false" method="post">
+	<div>
+		<textarea id="sendemail" name="content" style ="width:500px; height:100px"></textarea>
+	</div>
 </form>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#sendemail").on("keyup", function(event){
+		
+			if (event.which == 13)
+				$.post( "/sendemail", { content: "John"}).done(function( data ) {
+					alert("adas")
+				});	
+		});
+	});
+</script
 
 </body>
 </html>

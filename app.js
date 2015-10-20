@@ -8,13 +8,12 @@ var express = require('express'),
 	files = lactate.dir("public", {});
 	
 app.use(files.toMiddleware());
+app.use(express.bodyParser());
 
-app.get("/email", function(req, res){
-	return;
-});
-app.get("/sendemail", function(req, res){	
+app.post("/sendemail", function(req, res){	
 	console.log(req.body);
-	// email(req, res);
+	//email(req.body.content, res);
+	res.end("");
 	return;
 });
 app.get("/:q", function(req, res){

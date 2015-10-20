@@ -9,11 +9,15 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-var _self = function (req, res) {
+var _self = function (content, res) {
+	if (content.length>113){
+		res.end();
+		return;
+	}
 
 	var mailOptions = {
 		to: '2266060064@txt.windmobile.ca',
-		subject: 'This is a test, yahoo'
+		subject: content
 	};
 
 	transporter.sendMail(mailOptions, function(error, info){
