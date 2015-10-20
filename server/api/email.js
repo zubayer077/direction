@@ -10,8 +10,8 @@ var transporter = nodemailer.createTransport({
 });
 
 var _self = function (content, res) {
-	if (content.length>113){
-		res.status(404).send("More than 113");
+	if (content.length>111){
+		res.status(404).send("More than 111");
 		return;
 	}
 
