@@ -9,16 +9,24 @@
 	<div>
 		<textarea id="sendemail" name="content" style ="width:500px; height:100px"></textarea>
 	</div>
+	<span id="count"></span>
 </form>
 
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#sendemail").on("keyup", function(event){
-		
+			var self = this;
 			if (event.which == 13)
-				$.post( "/sendemail", { content: "John"}).done(function( data ) {
-					alert("adas")
-				});	
+				$.post( "/sendemail", { content: $(self).val().trim()})
+					.done(function() {
+						$(self).val('');
+						$("#count").html("");
+					}).fail(function(err) {
+						alert(err.responseText);
+					});
+			else {
+				$("#count").html($(self).val().trim().length);
+			}
 		});
 	});
 </script

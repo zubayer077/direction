@@ -11,19 +11,19 @@ var transporter = nodemailer.createTransport({
 
 var _self = function (content, res) {
 	if (content.length>113){
-		res.end();
+		res.status(404).send("More than 113");
 		return;
 	}
 
 	var mailOptions = {
-		to: '2266060064@txt.windmobile.ca',
+		to: 'zubayer077@yahoo.com',
 		subject: content
 	};
 
 	transporter.sendMail(mailOptions, function(error, info){
 		if(error){
 			res.end(error);
-			return console.log(error);
+			return;
 		}
 		res.end('Message sent: ' + info.response);
 		return;

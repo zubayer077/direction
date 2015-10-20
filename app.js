@@ -10,10 +10,8 @@ var express = require('express'),
 app.use(files.toMiddleware());
 app.use(express.bodyParser());
 
-app.post("/sendemail", function(req, res){	
-	console.log(req.body);
-	//email(req.body.content, res);
-	res.end("");
+app.post("/sendemail", function(req, res){
+	email(req.body.content, res);
 	return;
 });
 app.get("/:q", function(req, res){
