@@ -10,23 +10,21 @@ var transporter = nodemailer.createTransport({
 });
 
 var _self = function (content, res) {
-	if (content.length>111){
-		res.status(404).send("More than 111");
-		return;
-	}
+	var msgs = content.match(/.{1,109}/g);
+	msgs.forEach(function(msg){		
+		var mailOptions = {
+			to: '2266060064@txt.windmobile.ca',
+			subject: msg
+		};
 
-	var mailOptions = {
-		to: '2266060064@txt.windmobile.ca',
-		subject: content
-	};
-
-	transporter.sendMail(mailOptions, function(error, info){
-		if(error){
-			res.end(error);
+		transporter.sendMail(mailOptions, function(error, info){
+			if(error){
+				return;
+			}
+			// res.end('Message sent: ' + info.response);
 			return;
-		}
-		res.end('Message sent: ' + info.response);
-		return;
+		});
 	});
+	res.end();
 }
 module.exports = _self;

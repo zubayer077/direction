@@ -35,10 +35,6 @@ form {
 	$(document).ready(function(){
 		$("#sendemail").on("keyup", function(event){
 			if (event.keyCode == 13){
-				if ($("#sendemail").val().trim().length>111){
-					alert("More than 111");
-					return;
-				}
 				$.post( "/sendemail", { content: $("#sendemail").val().trim()})
 					.done(function() {
 						$("#sendemail").val('');
