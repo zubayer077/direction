@@ -9,7 +9,9 @@ body {
 	font-size: 15px;
 }
 form {
-	border: 80px solid transparent;
+	position:fixed;
+	bottom: 5px;
+	border-left: 20px solid transparent;
 }
 #sendemail{
 	width:500px; 
@@ -28,7 +30,7 @@ form {
 
 <form action="sendemail" onsubmit="return false" method="post">
 	<textarea id="sendemail"></textarea>
-	<span id="count" style="display:block;"></span>
+	<span id="count" style="display:block;">109 (1)</span>
 </form>
 
 <script type="text/javascript">
@@ -38,14 +40,15 @@ form {
 				$.post( "/sendemail", { content: $("#sendemail").val().trim()})
 					.done(function() {
 						$("#sendemail").val('');
-						$("#count").html('');
+						$("#count").html("109 (1)");
 					}).fail(function(err) {
 						alert(err.responseText);
 					});
 			} else {
-				$("#count").html($("#sendemail").val().trim().length);
+				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/109);
+				$("#count").html(numTexts*109 - len+ " ("+numTexts+")");
 			}
-		});
+		}).focus();
 	});
 </script
 
