@@ -45,7 +45,7 @@ form {
 						alert(err.responseText);
 					});
 			} else {
-				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/109);
+				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/109) || 1;
 				$("#count").html(numTexts*109 - len+ " ("+numTexts+")");
 			}
 		}).focus();
