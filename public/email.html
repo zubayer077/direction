@@ -30,7 +30,7 @@ form {
 
 <form action="sendemail" onsubmit="return false" method="post">
 	<textarea id="sendemail"></textarea>
-	<span id="count" style="display:block;">109 (1)</span>
+	<span id="count" style="display:block;">&nbsp</span>
 </form>
 
 <script type="text/javascript">
@@ -40,13 +40,13 @@ form {
 				$.post( "/sendemail", { content: $("#sendemail").val().trim()})
 					.done(function() {
 						$("#sendemail").val('');
-						$("#count").html("109 (1)");
+						$("#count").html("&nbsp");
 					}).fail(function(err) {
 						alert(err.responseText);
 					});
 			} else {
-				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/109) || 1;
-				$("#count").html(numTexts*109 - len+ " ("+numTexts+")");
+				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/111) || 1;
+				$("#count").html(len==0?"&nbsp":numTexts*111 - len+ " ("+numTexts+")");
 			}
 		}).focus();
 	});
