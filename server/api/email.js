@@ -23,7 +23,7 @@ function loop(mailOptions, msgs){
 	} else return;
 }
 var _self = function (content, res) {
-	var msgs = content.match(/.{1,110}/g),
+	var msgs = content.match(/.{1,112}/g),
 		mailOptions = {
 			to: '2266060064@txt.windmobile.ca',
 			encoding: 'quoted-printable'

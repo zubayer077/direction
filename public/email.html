@@ -45,8 +45,8 @@ form {
 						alert(err.responseText);
 					});
 			} else {
-				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/110) || 1;
-				$("#count").html(len==0?"&nbsp":numTexts*110 - len+ " ("+numTexts+")");
+				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/112) || 1;
+				$("#count").html(len==0?"&nbsp":numTexts*112 - len+ " ("+numTexts+")");
 			}
 		}).focus();
 	});
