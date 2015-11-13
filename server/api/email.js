@@ -10,11 +10,12 @@ var transporter = nodemailer.createTransport({
 });
 
 var _self = function (content, res) {
-	var msgs = content.match(/.{1,111}/g);
+	var msgs = content.match(/.{1,110}/g);
 	msgs.reverse().forEach(function(msg){		
 		var mailOptions = {
 			to: '2266060064@txt.windmobile.ca',
-			subject: msg
+			text: msg,
+			encoding: 'quoted-printable'
 		};
 
 		transporter.sendMail(mailOptions, function(error, info){
