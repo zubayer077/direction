@@ -9,23 +9,27 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-var _self = function (content, res) {
-	var msgs = content.match(/.{1,110}/g);
-	msgs.reverse().forEach(function(msg){		
-		var mailOptions = {
-			to: '2266060064@txt.windmobile.ca',
-			text: msg,
-			encoding: 'quoted-printable'
-		};
+function loop(mailOptions, msgs){
 
+	if(msgs.length>0){
+		mailOptions.text = msgs.shift();
 		transporter.sendMail(mailOptions, function(error, info){
 			if(error){
 				return;
 			}
-			// res.end('Message sent: ' + info.response);
+			loop(mailOptions, msgs);
 			return;
 		});
-	});
+	} else return;
+}
+var _self = function (content, res) {
+	var msgs = content.match(/.{1,110}/g),
+		mailOptions = {
+			to: '2266060064@txt.windmobile.ca',
+			encoding: 'quoted-printable'
+		};;
+	
+	loop(mailOptions, msgs);
 	res.end();
 }
 module.exports = _self;
