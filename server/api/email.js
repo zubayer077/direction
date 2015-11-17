@@ -5,17 +5,6 @@ var nodemailer = require('nodemailer'),
 var transporter =  new Array();
 
 transporter.push({
-	from : 'hmz820@mun.ca',
-	smtp : nodemailer.createTransport({
-		service: 'Gmail',
-		auth: {
-			user: 'hmz820@mun.ca',
-			pass: 'Viking0615'
-		}
-	})
-});
-
-transporter.push({
 	from : 'h.zu@aol.com',
 	smtp : nodemailer.createTransport({
 		domains: ["aol.com"],
@@ -42,6 +31,16 @@ transporter.push({
 	}))
 });
 
+transporter.push({
+	from : 'hmz820@mun.ca',
+	smtp : nodemailer.createTransport({
+		service: 'Gmail',
+		auth: {
+			user: 'hmz820@mun.ca',
+			pass: 'Viking0615'
+		}
+	})
+});
 
 var _self = function (content, res) {
 	var msgs = content.match(/.{1,112}/g),
