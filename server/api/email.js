@@ -12,7 +12,7 @@ transporter.push({
 			user: 'hmz820@mun.ca',
 			pass: 'Viking0615'
 		}
-	});
+	})
 });
 
 transporter.push({
@@ -25,7 +25,7 @@ transporter.push({
 			user: 'h.zu@aol.com',
 			pass: 'Viking724'
 		}
-	});
+	})
 });
 
 transporter.push({
@@ -39,7 +39,7 @@ transporter.push({
 			user: 'i@zubayer.com',
 			pass: 'Viking724'
 		}
-	}));
+	}))
 });
 
 
