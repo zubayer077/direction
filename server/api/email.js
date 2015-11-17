@@ -28,7 +28,7 @@ transporter.push({
 	});
 });
 
-transporter.push({ 
+transporter.push({
 	from : 'i@zubayer.com',
 	smtp : nodemailer.createTransport(smtpTransport({
 		host: 'rsb20.rhostbh.com',
