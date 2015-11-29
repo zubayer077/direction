@@ -11,18 +11,18 @@ body {
 form {
 	position:fixed;
 	bottom: 5px;
+	right: 5px;
 	border-left: 20px solid transparent;
 }
 #sendemail{
 	width:500px; 
 	min-height:200px; 
-	border: 1px solid #aaa;
+	border: 1px solid #fff;
 	padding: 10px 10px 0 10px;
 	font-family: 'Open Sans', serif;
 	font-size: 15px;
 	line-height: 26px;
 }
-
 </style>
 
 </head>
@@ -34,6 +34,14 @@ form {
 </form>
 
 <script type="text/javascript">
+window.lastText = Date.now();
+var _currentColor = $("form, #sendemail");
+setInterval(function(){	
+	if ((Date.now() - window.lastText)>1000)
+		_currentColor.css("color", "#EEE");
+		
+}, 500);
+
 	$(document).ready(function(){
 		$("#sendemail").on("keyup", function(event){
 			if (event.keyCode == 13){
@@ -47,6 +55,8 @@ form {
 			} else {
 				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/112) || 1;
 				$("#count").html(len==0?"&nbsp":numTexts*112 - len+ " ("+numTexts+")");
+				_currentColor.css("color", "black");
+				window.lastText = Date.now();
 			}
 		}).focus();
 	});
