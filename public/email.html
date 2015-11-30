@@ -45,8 +45,12 @@ setInterval(function(){
 }, 500);
 
 	$(document).ready(function(){
-		$("#sendemail").on("keydown", function(event){
-			if (event.keyCode == 13){
+		$("#sendemail").on("keyup", function(event){
+			var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/112) || 1;
+			$("#count").html(len==0?"&nbsp":numTexts*112 - len+ " ("+numTexts+")");
+		}).on("keypress", function(event){
+			if (event.which == 13) {
+				event.preventDefault();
 				$.post( "/sendemail", { content: $("#sendemail").val().trim()})
 					.done(function() {
 						$("#sendemail").val('');
@@ -55,8 +59,6 @@ setInterval(function(){
 						alert(err.responseText);
 					});
 			} else {
-				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/112) || 1;
-				$("#count").html(len==0?"&nbsp":numTexts*112 - len+ " ("+numTexts+")");
 				if (!window.lastText.timeChanged) _currentColor.css("color", "black");
 				window.lastText = { since : Date.now(), timeChanged : true};
 			}
