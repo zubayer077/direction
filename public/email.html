@@ -15,7 +15,7 @@ form {
 	border-left: 20px solid transparent;
 }
 #sendemail{
-	width:500px; 
+	width:450px; 
 	min-height:200px; 
 	border: 1px solid #fff;
 	padding: 10px 10px 0 10px;
@@ -35,7 +35,7 @@ form {
 
 <script type="text/javascript">
 window.lastText = { since : Date.now(), timeChanged : false};
-var _currentColor = $("form, #sendemail");
+var _currentColor = $("form, #sendemail"), _count = $("#count"), _sendMail = $("#sendemail");
 
 setInterval(function(){	
 	if (window.lastText.timeChanged && (Date.now() - window.lastText.since)>1000){
@@ -45,23 +45,24 @@ setInterval(function(){
 }, 500);
 
 	$(document).ready(function(){
-		$("#sendemail").on("keyup", function(event){
-			var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/112) || 1;
-			$("#count").html(len==0?"&nbsp":numTexts*112 - len+ " ("+numTexts+")");
-		}).on("keypress", function(event){
-			if (event.which == 13) {
-				event.preventDefault();
-				$.post( "/sendemail", { content: $("#sendemail").val().trim()})
-					.done(function() {
-						$("#sendemail").val('');
-						$("#count").html("&nbsp");
-					}).fail(function(err) {
-						alert(err.responseText);
-					});
-			} else {
-				if (!window.lastText.timeChanged) _currentColor.css("color", "black");
-				window.lastText = { since : Date.now(), timeChanged : true};
-			}
+		_sendMail.on("keyup", function(event){
+			var len = $(this).val().length, numTexts = parseInt(len/112)+1;
+			_count.html(len==0?"&nbsp":numTexts*112-len+ " ("+numTexts+")");
+		}).on("keydown", function(event){
+ 			if (!(event.altKey || event.shiftKey || event.ctrlKey)){
+				if (event.which == 13) {
+					$.post( "/sendemail", { content: _sendMail.val().replace(/(\r\n|\n|\r)/gm,"").trim()})
+						.done(function() {
+							_sendMail.val('');
+							_count.html("&nbsp");
+						}).fail(function(err) {
+							alert(err.responseText);
+						});
+				} else {
+					if (!window.lastText.timeChanged) _currentColor.css("color", "black");
+					window.lastText = { since : Date.now(), timeChanged : true};
+				}
+ 			}
 		}).focus();
 	});
 </script
