@@ -34,16 +34,18 @@ form {
 </form>
 
 <script type="text/javascript">
-window.lastText = Date.now();
+window.lastText = { since : Date.now(), timeChanged : false};
 var _currentColor = $("form, #sendemail");
+
 setInterval(function(){	
-	if ((Date.now() - window.lastText)>1000)
+	if (window.lastText.timeChanged && (Date.now() - window.lastText.since)>1000){
 		_currentColor.css("color", "#EEE");
-		
+		window.lastText.timeChanged = false;
+	}	
 }, 500);
 
 	$(document).ready(function(){
-		$("#sendemail").on("keyup", function(event){
+		$("#sendemail").on("keydown", function(event){
 			if (event.keyCode == 13){
 				$.post( "/sendemail", { content: $("#sendemail").val().trim()})
 					.done(function() {
@@ -55,8 +57,8 @@ setInterval(function(){
 			} else {
 				var len = parseInt($("#sendemail").val().trim().length), numTexts = Math.ceil(len/112) || 1;
 				$("#count").html(len==0?"&nbsp":numTexts*112 - len+ " ("+numTexts+")");
-				_currentColor.css("color", "black");
-				window.lastText = Date.now();
+				if (!window.lastText.timeChanged) _currentColor.css("color", "black");
+				window.lastText = { since : Date.now(), timeChanged : true};
 			}
 		}).focus();
 	});
