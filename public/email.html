@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>&nbsp</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
 <style>
@@ -27,31 +28,35 @@ form {
 
 </head>
 <body>
-
 <form action="sendemail" onsubmit="return false" method="post">
-	<textarea id="sendemail"></textarea>
+	<textarea id="sendemail" spellcheck="true" autofocus></textarea>
 	<span id="count" style="display:block;">&nbsp</span>
 </form>
 
 <script type="text/javascript">
-window.lastText = { since : Date.now(), timeChanged : false};
-var _currentColor = $("form, #sendemail"), _count = $("#count"), _sendMail = $("#sendemail");
+	window.lastText = { since : Date.now(), timeChanged : false};
+	var _currentColor = $("form, #sendemail"), _count = $("#count"), _sendMail = $("#sendemail");
 
-setInterval(function(){	
-	if (window.lastText.timeChanged && (Date.now() - window.lastText.since)>1000){
-		_currentColor.css("color", "#EEE");
-		window.lastText.timeChanged = false;
-	}	
-}, 500);
+	setInterval(function(){	
+		if (window.lastText.timeChanged && (Date.now() - window.lastText.since)>1000){
+			var prevVal = _sendMail.val();
+			_currentColor.css("color", "#EEE");
+			_sendMail.attr('spellcheck', 'false').val('').val(prevVal);
+			window.lastText.timeChanged = false;
+		}
+	}, 500);
 
 	$(document).ready(function(){
 		_sendMail.on("keyup", function(event){
 			var len = $(this).val().length, numTexts = parseInt(len/112)+1;
 			_count.html(len==0?"&nbsp":numTexts*112-len+ " ("+numTexts+")");
 		}).on("keydown", function(event){
- 			if (!(event.altKey || event.shiftKey || event.ctrlKey)){
+			if (!(event.altKey || event.shiftKey || event.ctrlKey) || /[a-zA-Z0-9-_ ]/.test(String.fromCharCode(event.keyCode))){
 				if (event.which == 13) {
-					$.post( "/sendemail", { content: _sendMail.val().replace(/(\r\n|\n|\r)/gm,"").trim()})
+					var content = _sendMail.val().replace(/(\r\n|\n|\r)/gm,"").trim();
+					if (content.length<1) return;
+					
+					$.post( "/sendemail", { content: content})
 						.done(function() {
 							_sendMail.val('');
 							_count.html("&nbsp");
@@ -59,11 +64,14 @@ setInterval(function(){
 							alert(err.responseText);
 						});
 				} else {
-					if (!window.lastText.timeChanged) _currentColor.css("color", "black");
+					if (!window.lastText.timeChanged){
+						_sendMail.attr('spellcheck', 'true');
+						_currentColor.css("color", "black");
+					}
 					window.lastText = { since : Date.now(), timeChanged : true};
 				}
- 			}
-		}).focus();
+			}
+		});
 	});
 </script
 
