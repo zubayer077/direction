@@ -67,6 +67,21 @@ form {
 				}
 			}
 		});
+		
+		$(window).on("blur focus click", function(e) {
+			var prevType = $(this).data("prevType");
+
+			if (prevType != e.type) {
+				switch (e.type) {
+					case "focus":
+					case "click":
+						_sendMail.focus();
+						break;
+				}
+			}
+
+			$(this).data("prevType", e.type);
+		});
 	});
 </script
 
