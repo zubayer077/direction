@@ -4,6 +4,7 @@ var nodemailer = require('nodemailer'),
 // create reusable transporter object using SMTP transport
 var transporter =  new Array();
 
+/*
 transporter.push({
 	from : 'h.zu@aol.com',
 	smtp : nodemailer.createTransport({
@@ -16,7 +17,7 @@ transporter.push({
 		}
 	})
 });
-
+*/
 transporter.push({
 	from : 'i@zubayer.com',
 	smtp : nodemailer.createTransport(smtpTransport({
@@ -60,7 +61,7 @@ var _self = function (content, res) {
 			}
 			return;
 		});
-		index = index==2?0:index+1;
+		index = index==(transporter.length-1)?0:index+1;
 	});
 	res.end();
 }
