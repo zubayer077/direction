@@ -68,18 +68,17 @@ form {
 			}
 		});
 		
-		$(window).on("blur focus click", function(e) {
+		$(window).on("blur focus", function(e) {
 			var prevType = $(this).data("prevType");
-
+			
 			if (prevType != e.type) {
 				switch (e.type) {
 					case "focus":
-					case "click":
-						_sendMail.focus();
-						break;
+						setTimeout(function(){_sendMail.focus();}, 100);
+					break;
 				}
 			}
-
+			
 			$(this).data("prevType", e.type);
 		});
 	});
