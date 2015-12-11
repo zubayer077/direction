@@ -18,6 +18,18 @@ transporter.push({
 	})
 });
 */
+
+transporter.push({
+	from : 'hmz820@mun.ca',
+	smtp : nodemailer.createTransport({
+		service: 'Gmail',
+		auth: {
+			user: 'hmz820@mun.ca',
+			pass: 'Viking0615'
+		}
+	})
+});
+
 transporter.push({
 	from : 'i@zubayer.com',
 	smtp : nodemailer.createTransport(smtpTransport({
@@ -30,17 +42,6 @@ transporter.push({
 			pass: 'Viking724'
 		}
 	}))
-});
-
-transporter.push({
-	from : 'hmz820@mun.ca',
-	smtp : nodemailer.createTransport({
-		service: 'Gmail',
-		auth: {
-			user: 'hmz820@mun.ca',
-			pass: 'Viking0615'
-		}
-	})
 });
 
 var _self = function (content, res) {
