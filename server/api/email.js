@@ -25,7 +25,7 @@ transporter.push({
 		service: 'Gmail',
 		auth: {
 			user: 'hmz820@mun.ca',
-			pass: 'Viking0615'
+			pass: 'Viking1215'
 		}
 	})
 });
