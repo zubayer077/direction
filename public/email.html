@@ -3,6 +3,11 @@
 <head>
 <title>Search</title>
 <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.a-tools-1.4.1.js"></script>
+<script type="text/javascript" src="js/jquery.asuggest.js"></script>
+<script type="text/javascript" src="js/wordList.js"></script>
+<script type="text/javascript" src="js/wordBank.min.js"></script>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
 <style>
 body {
@@ -35,7 +40,7 @@ form {
 
 <script type="text/javascript">
 	window.lastText = { since : Date.now(), timeChanged : false};
-	var _currentColor = $("form, #sendemail"), _count = $("#count"), _sendMail = $("#sendemail");
+	var _currentColor = $("form, #sendemail"), _count = $("#count"), _sendMail = $("#sendemail"), sugg = _sendMail.asuggest([]);
 
 	setInterval(function(){	
 		if (window.lastText.timeChanged && (Date.now() - window.lastText.since)>1000){
@@ -43,9 +48,22 @@ form {
 			window.lastText.timeChanged = false;
 		}
 	}, 500);
-
 	$(document).ready(function(){
-		_sendMail.on("keyup", function(event){
+		$("body form").on("keyup", function(event){
+			if (/\S*(\S+)\s$/.test(_sendMail.val())){
+				var lastWords = _sendMail.val().match(/\S*(\S+)\s$/) || undefined;
+				if (lastWords && lastWords[0]){
+					var lastWord = lastWords[0].replace(/[^\w\s]/g, "").trim();
+					for (l=0;l<sugg.suggests.length;++l){
+						if (sugg.suggests[l]===lastWord){
+							sugg.suggests.splice(l, 1);
+							break;
+						}
+					}
+					sugg.suggests.unshift(lastWord);
+				}
+			}
+			
 			var len = $(this).val().length, numTexts = parseInt(len/112)+1;
 			_count.html(len==0?"&nbsp":numTexts*112-len+ " ("+numTexts+")");
 		}).on("keydown", function(event){
@@ -54,10 +72,21 @@ form {
 					var content = _sendMail.val().replace(/(\r\n|\n|\r)/gm,"").trim();
 					if (content.length<1) return;
 					
+
 					$.post( "/sendemail", { content: content})
 						.done(function() {
 							_sendMail.val('');
 							_count.html("&nbsp");
+							content.split(" ").forEach(function(el){
+								var lastWord = el.replace(/[^\w\s]/g, "").trim();
+								for (l=0;l<sugg.suggests.length;++l){
+									if (sugg.suggests[l]===lastWord){
+										sugg.suggests.splice(l, 1);
+										break;
+									}
+								}
+								sugg.suggests.unshift(lastWord);
+							});
 						}).fail(function(err) {
 							alert(err.responseText);
 						});
