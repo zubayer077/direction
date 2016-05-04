@@ -15,11 +15,11 @@ app.post("/sendemail", function(req, res){
 	return;
 });
 app.get("/:q", function(req, res){
-	direction('https://maps.googleapis.com/maps/api/directions/json?origin='+req.params.q+'&destination=147+Scott+Rd,+Cambridge+ON,+Canada&mode=transit&key=AIzaSyDCMhZrfLlTvXGkaXgv3HWD5nTZAuJG7ig', res);
+	direction('https://maps.googleapis.com/maps/api/directions/json?origin='+req.params.q+'&destination=43.423211,-80.441337&mode=transit&key=AIzaSyDCMhZrfLlTvXGkaXgv3HWD5nTZAuJG7ig', res);
 	return;
 });
 app.get("/:q/:d", function(req, res){
-	direction('https://maps.googleapis.com/maps/api/directions/json?origin='+req.params.q+'&destination='+(req.params.d?req.params.d:'147+Scott+Rd,+Cambridge+ON,+Canada')+'&mode=transit&key=AIzaSyDCMhZrfLlTvXGkaXgv3HWD5nTZAuJG7ig', res);
+	direction('https://maps.googleapis.com/maps/api/directions/json?origin='+req.params.q+'&destination='+(req.params.d?req.params.d:'43.423211,-80.441337')+'&mode=transit&key=AIzaSyDCMhZrfLlTvXGkaXgv3HWD5nTZAuJG7ig', res);
 	return;
 });
 app.get("/", function(req, res){
